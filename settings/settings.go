@@ -4,36 +4,65 @@ import (
 	"fmt"
 
 	"github.com/fsnotify/fsnotify"
-
-	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
 
-func Init() (err error) {
-	viper.SetConfigName("config")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".")
+var Conf = new(AppConfig)
 
-	err = viper.ReadInConfig() // 读取配置信息
-	if err != nil {
-		fmt.Println("viper.ReadInConfig failed, err: ", err)
-		return // 读取配置信息失败
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
-	}
+type AppConfig struct {
+	Name         string `mapstructure:"name"`
+	Mode         string `mapstructure:"mode"`
+	Version      string `mapstructrue:"version"`
+	StartTime    string `mapstructure:"start_time"`
+	MachineID    int64  `mapstructrue:"machine_id"`
+	Port         int    `mapstructure:"port"`
+	*LogConfig   `mapstructure:"log"`
+	*MySQLConfig `mapstructure:"mysql"`
+	*RedisConfig `mapstructure:"redis"`
+}
 
-	// 监控配置文件变化
+type MySQLConfig struct {
+	Host         string `mapstructure:"host"`
+	User         string `mapstructure:"user"`
+	Password     string `mapstructure:"password"`
+	DB           string `mapstructure:"db"`
+	Port         int    `mapstructure:"port"`
+	MaxOpenConns int    `mapstructure:"max_open_conns"`
+	MaxIdleConns int    `mapstructure:"max_idle_conns"`
+}
 
-	r := gin.Default()
-	// 访问/version的返回值会随配置文件的变化而变化
+type RedisConfig struct {
+	Host         string `mapstructure:"host"`
+	Password     string `mapstructure:"password"`
+	Port         int    `mapstructure:"port"`
+	DB           int    `mapstructure:"db"`
+	PoolSize     int    `mapstructure:"pool_size"`
+	MinIdleConns int    `mapstructure:"min_idle_conns"`
+}
 
-	if err := r.Run(
-		fmt.Sprintf(":%d", viper.GetInt("port"))); err != nil {
-		panic(err)
-	}
+type LogConfig struct {
+	Level      string `mapstructure:"level"`
+	Filename   string `mapstructure:"filename"`
+	MaxSize    int    `mapstructure:"max_size"`
+	MaxAge     int    `mapstructure:"max_age"`
+	MaxBackups int    `mapstructure:"max_backups"`
+}
+
+func Init() error {
+	viper.SetConfigFile("./config.yaml")
+
 	viper.WatchConfig()
 	viper.OnConfigChange(func(in fsnotify.Event) {
-		fmt.Println("配置文件修改了...")
+		fmt.Println("夭寿啦~配置文件被人修改啦...")
+		viper.Unmarshal(&Conf)
 	})
-	return
 
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(fmt.Errorf("ReadInConfig failed, err: %v", err))
+	}
+	if err := viper.Unmarshal(&Conf); err != nil {
+		panic(fmt.Errorf("unmarshal to Conf failed, err:%v", err))
+	}
+	return err
 }

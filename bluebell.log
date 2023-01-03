@@ -1,0 +1,21 @@
+{"level":"DEBUG","time":"2023-01-03T00:16:48.511+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-03T00:16:48.521+0800","caller":"mysql/mysql.go:27","msg":"connect DB failed","error":"Error 1049: Unknown database 'sql_demo'"}
+{"level":"DEBUG","time":"2023-01-03T00:17:32.847+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-03T00:27:02.496+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T00:27:27.310+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T00:27:27.310+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T19:44:38.110+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T20:16:38.549+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T20:16:38.549+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T20:16:41.340+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T20:22:45.700+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T20:22:45.700+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T20:24:26.403+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T20:24:47.728+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T20:24:47.728+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T20:24:50.417+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T20:26:51.130+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T20:26:51.130+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T20:26:52.650+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T21:32:07.711+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T21:32:07.711+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}

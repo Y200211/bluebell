@@ -4,6 +4,7 @@ import (
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/logger"
+	"bluebell/pkg/snowflake"
 	"bluebell/routes"
 	"context"
 	"fmt"
@@ -29,26 +30,31 @@ func main() {
 		return
 	}
 	// 2、初始化日志
-	if err := logger.Init(); err != nil {
+	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Println("init logger failed , err:", err)
 		return
 	}
 	defer zap.L().Sync()
 	zap.L().Debug("logger init success...")
 	// 3、初始化Mysql
-	if err := mysql.Init(); err != nil {
-		fmt.Println("init mysql failed , err:", err)
+	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
+		fmt.Printf("init mysql failed, err:%v\n", err)
 		return
 	}
-	defer mysql.Close()
+	defer mysql.Close() // 程序退出关闭数据库连接
 	// 4、初始化Redis连接
-	if err := redis.Init(); err != nil {
+	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Println("init redis failed , err:", err)
 		return
 	}
 	defer redis.Close()
+
+	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
+		fmt.Printf("init snowflake failed, err:%v\n", err)
+		return
+	}
 	// 5、注册路由
-	r := routes.SetUp()
+	r := routes.SetupRouter()
 	// 6、启动服务（优雅关机）
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),

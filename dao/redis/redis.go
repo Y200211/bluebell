@@ -1,29 +1,37 @@
 package redis
 
 import (
+	"bluebell/settings"
 	"fmt"
 
 	"github.com/go-redis/redis"
-	"github.com/spf13/viper"
 )
 
-var rdb *redis.Client
+var (
+	client *redis.Client
+	Nil    = redis.Nil
+)
 
-func Init() (err error) {
-	rdb = redis.NewClient(&redis.Options{
-		Addr: fmt.Sprintf("%s:%d",
-			viper.GetString("redis.host"),
-			viper.GetInt("redis.port"),
-		),
-		Password: viper.GetString("redis.password"),
-		DB:       viper.GetInt("redis.db"),
-		PoolSize: viper.GetInt("redis.pool_size"),
+type SliceCmd = redis.SliceCmd
+type StringStringMapCmd = redis.StringStringMapCmd
+
+// Init 初始化连接
+func Init(cfg *settings.RedisConfig) (err error) {
+	client = redis.NewClient(&redis.Options{
+		Addr:         fmt.Sprintf("%s:%d", cfg.Host, cfg.Port),
+		Password:     cfg.Password, // no password set
+		DB:           cfg.DB,       // use default DB
+		PoolSize:     cfg.PoolSize,
+		MinIdleConns: cfg.MinIdleConns,
 	})
 
-	_, err = rdb.Ping().Result()
-	return
+	_, err = client.Ping().Result()
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func Close() {
-	_ = rdb.Close()
+	_ = client.Close()
 }
