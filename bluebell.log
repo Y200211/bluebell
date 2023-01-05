@@ -19,3 +19,21 @@
 {"level":"DEBUG","time":"2023-01-03T20:26:52.650+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
 {"level":"INFO","time":"2023-01-03T21:32:07.711+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2023-01-03T21:32:07.711+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T21:49:34.148+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T21:49:59.954+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T21:49:59.954+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T23:09:29.502+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T23:16:05.329+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T23:16:05.329+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T23:53:58.697+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T23:54:46.308+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T23:54:46.308+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T23:54:47.822+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-03T23:59:31.835+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-01-03T23:59:31.845+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-01-03T23:59:34.648+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-04T00:10:08.563+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-05T00:04:27.770+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-05T00:06:09.765+0800","caller":"controller/user.go:19","msg":"SignUpHandler with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"DEBUG","time":"2023-01-05T00:11:54.639+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-05T00:12:03.240+0800","caller":"controller/user.go:27","msg":"SignUpHandler with invalid param"}

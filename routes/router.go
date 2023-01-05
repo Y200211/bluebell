@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"bluebell/controller"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,6 +11,8 @@ func SetupRouter() *gin.Engine {
 	//gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
 
+	r.POST("/signup", controller.SignUpHandler)
+
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})
@@ -18,5 +21,6 @@ func SetupRouter() *gin.Engine {
 			"msg": "404",
 		})
 	})
+
 	return r
 }
