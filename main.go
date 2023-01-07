@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bluebell/controller"
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/logger"
@@ -53,6 +54,12 @@ func main() {
 		fmt.Printf("init snowflake failed, err:%v\n", err)
 		return
 	}
+
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Printf("init trans failed, err:%v\n", err)
+		return
+	}
+
 	// 5、注册路由
 	r := routes.SetupRouter()
 	err := r.Run(fmt.Sprintf(":%d", settings.Conf.Port))

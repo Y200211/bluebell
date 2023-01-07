@@ -37,3 +37,39 @@
 {"level":"ERROR","time":"2023-01-05T00:06:09.765+0800","caller":"controller/user.go:19","msg":"SignUpHandler with invalid param","error":"invalid character '}' looking for beginning of object key string"}
 {"level":"DEBUG","time":"2023-01-05T00:11:54.639+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
 {"level":"ERROR","time":"2023-01-05T00:12:03.240+0800","caller":"controller/user.go:27","msg":"SignUpHandler with invalid param"}
+{"level":"DEBUG","time":"2023-01-05T00:12:25.238+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-05T00:12:29.154+0800","caller":"controller/user.go:27","msg":"SignUpHandler with invalid param"}
+{"level":"ERROR","time":"2023-01-05T00:13:47.517+0800","caller":"controller/user.go:27","msg":"SignUpHandler with invalid param"}
+{"level":"DEBUG","time":"2023-01-06T16:07:21.297+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:07:36.073+0800","caller":"controller/user.go:19","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"DEBUG","time":"2023-01-06T16:09:21.201+0800","caller":"bluebell/main.go:38","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:09:23.427+0800","caller":"controller/user.go:19","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"DEBUG","time":"2023-01-06T16:22:08.523+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:22:34.648+0800","caller":"controller/user.go:20","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"DEBUG","time":"2023-01-06T16:25:04.938+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:25:06.129+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag"}
+{"level":"DEBUG","time":"2023-01-06T16:28:04.207+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:28:06.119+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag"}
+{"level":"DEBUG","time":"2023-01-06T16:29:31.750+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:29:40.955+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:30:57.562+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:32:03.978+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:32:20.516+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:32:35.746+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:32:43.313+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:33:05.650+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:33:58.253+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:34:38.816+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T16:34:47.194+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T16:34:48.932+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"DEBUG","time":"2023-01-06T22:07:45.135+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:08:49.621+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-06T22:09:05.825+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"ERROR","time":"2023-01-06T22:09:11.939+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"ERROR","time":"2023-01-06T22:09:17.888+0800","caller":"controller/user.go:21","msg":"SignUpHandler with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"DEBUG","time":"2023-01-06T22:09:46.627+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:11:39.782+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:21:55.965+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:23:38.682+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:25:41.447+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:27:36.603+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
