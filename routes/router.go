@@ -7,12 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRouter() *gin.Engine {
-
+func SetupRouter(mode string) *gin.Engine {
+	if mode == gin.ReleaseMode {
+		gin.SetMode(gin.ReleaseMode) // gin 设置成release模式
+	}
 	//gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
 
 	r.POST("/signup", controller.SignUpHandler)
+	r.GET("/login", controller.LoginHandler)
 
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")

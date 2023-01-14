@@ -73,3 +73,4 @@
 {"level":"DEBUG","time":"2023-01-06T22:23:38.682+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-06T22:25:41.447+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-06T22:27:36.603+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-06T22:28:46.081+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
