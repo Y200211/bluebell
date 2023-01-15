@@ -10,6 +10,12 @@ import (
 
 const secret = "liwenzhou.com"
 
+var (
+	ErrorUserExist       = errors.New("用户已经存在")
+	ErrorUserNotExist    = errors.New("用户不存在")
+	ErrorInvalidPassword = errors.New("密码错误")
+)
+
 // CheckUserExist 放操作数据库操作的
 func CheckUserExist(username string) (err error) {
 	sqlStr := `select count(user_id) from user where username = ?`
@@ -18,7 +24,7 @@ func CheckUserExist(username string) (err error) {
 		return err
 	}
 	if count > 0 {
-		return errors.New("用户已经存在")
+		return ErrorUserExist
 	}
 	return
 }
@@ -45,7 +51,7 @@ func Login(user *models.User) (err error) {
 	sqlStr := `select user_id, username, password from user where username = ?`
 	err = db.Get(user, sqlStr, user.Username)
 	if err == sql.ErrNoRows {
-		return errors.New("用户不存在")
+		return ErrorUserNotExist
 	}
 	if err != nil {
 		return err
@@ -54,5 +60,5 @@ func Login(user *models.User) (err error) {
 	if password != user.Password {
 		return errors.New("密码错误")
 	}
-	return
+	return ErrorInvalidPassword
 }

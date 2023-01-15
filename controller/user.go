@@ -1,10 +1,11 @@
 package controller
 
 import (
+	"bluebell/dao/mysql"
 	"bluebell/logic"
 	"bluebell/models"
+	"errors"
 	"fmt"
-	"net/http"
 
 	"github.com/go-playground/validator/v10"
 
@@ -21,15 +22,13 @@ func SignUpHandler(c *gin.Context) {
 		zap.L().Error("SignUpHandler with invalid param", zap.Error(err))
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": err.Error(),
-			})
+			ResponseError(c, CodeInvalidParam)
 			return
 		}
-
-		c.JSON(http.StatusOK, gin.H{
-			"msg": removeTopStruct(errs.Translate(trans)),
-		})
+		ResponseErrorWithMsg(c, CodeInvalidParam, removeTopStruct(errs.Translate(trans)))
+		//c.JSON(http.StatusOK, gin.H{
+		//	"msg": removeTopStruct(errs.Translate(trans)),
+		//})
 		return
 	}
 	//手动对请求参数进行详细的业务规则校验
@@ -45,16 +44,18 @@ func SignUpHandler(c *gin.Context) {
 	//2.业务处理
 
 	if err := logic.SignUp(p); err != nil {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "注册失败",
-		})
+		if errors.Is(err, mysql.ErrorUserExist) {
+			ResponseError(c, CodeUserExist)
+			return
+		}
+		ResponseError(c, CodeServerBusy)
+		return
+
 		fmt.Println(err)
 		return
 	}
 	//3.返回响应
-	c.JSON(http.StatusOK, gin.H{
-		"msg": "success",
-	})
+	ResponseSuccess(c, nil)
 
 }
 
@@ -66,28 +67,26 @@ func LoginHandler(c *gin.Context) {
 		zap.L().Error("LoginHandler with invalid param", zap.Error(err))
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": err.Error(),
-			})
+			ResponseError(c, CodeInvalidParam)
 			return
 		}
-
-		c.JSON(http.StatusOK, gin.H{
-			"msg": removeTopStruct(errs.Translate(trans)),
-		})
+		ResponseErrorWithMsg(c, CodeInvalidParam, removeTopStruct(errs.Translate(trans)))
+		//c.JSON(http.StatusOK, gin.H{
+		//	"msg": removeTopStruct(errs.Translate(trans)),
+		//})
 		return
 	}
 	//2 逻辑处理
 	if err := logic.Login(p); err != nil {
 		zap.L().Error("logic.Login failed", zap.String("username", p.Username), zap.Error(err))
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "用户名或密码错误",
-		})
+		if errors.Is(err, mysql.ErrorUserNotExist) {
+			ResponseError(c, CodeUserNotExist)
+			return
+		}
+		ResponseError(c, CodeInvalidPassword)
 		fmt.Println(err)
 		return
 	}
 	//3 返回参数
-	c.JSON(http.StatusOK, gin.H{
-		"msg": "登录成功",
-	})
+	ResponseSuccess(c, nil)
 }
