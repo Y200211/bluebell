@@ -24,7 +24,7 @@ func SetupRouter(mode string) *gin.Engine {
 
 	v1.Use(middlewares.JWTAuthMiddleware())
 	{
-		v1.GET("/community", controller.CommunityHandler)
+		v1.POST("/community", controller.CommunityHandler)
 	}
 
 	r.NoRoute(func(c *gin.Context) {

@@ -41,6 +41,3 @@ func Login(p *models.ParamLogin) (token string, err error) {
 	return jwt.GenToken(user.UserID, user.Username)
 
 }
-func GetCommunityList() (data string, err error) {
-
-}
