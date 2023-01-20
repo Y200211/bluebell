@@ -74,3 +74,7 @@
 {"level":"DEBUG","time":"2023-01-06T22:25:41.447+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-06T22:27:36.603+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-06T22:28:46.081+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-17T22:07:54.464+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-17T22:09:51.319+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-19T19:56:16.805+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-19T21:22:35.858+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
