@@ -5,16 +5,9 @@ import (
 	"crypto/md5"
 	"database/sql"
 	"encoding/hex"
-	"errors"
 )
 
 const secret = "liwenzhou.com"
-
-var (
-	ErrorUserExist       = errors.New("用户已经存在")
-	ErrorUserNotExist    = errors.New("用户不存在")
-	ErrorInvalidPassword = errors.New("密码错误")
-)
 
 // CheckUserExist 放操作数据库操作的
 func CheckUserExist(username string) (err error) {

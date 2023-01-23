@@ -7,7 +7,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-const TokenExpireDuration = time.Hour * 2
+const TokenExpireDuration = time.Hour * 2400
 
 // CustomSecret 用于加盐的字符串
 var mySecret = []byte("夏天夏天悄悄过去")
