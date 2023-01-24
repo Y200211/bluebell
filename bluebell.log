@@ -120,3 +120,15 @@
 {"level":"DEBUG","time":"2023-01-23T21:16:45.512+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-23T22:42:36.498+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-23T22:43:59.402+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-24T23:42:46.333+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-24T23:45:10.929+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-24T23:47:32.293+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-24T23:54:14.677+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-24T23:55:05.748+0800","caller":"logger/logger.go:80","msg":"/api/v1/community/3","status":200,"method":"POST","path":"/api/v1/community/3","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0016674}
+{"level":"INFO","time":"2023-01-24T23:55:18.250+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.000666}
+{"level":"DEBUG","time":"2023-01-24T23:56:56.992+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-24T23:57:31.137+0800","caller":"controller/post.go:16","msg":"c,ShouldBindJSON(p) error","err":"json: cannot unmarshal string into Go struct field Post.community_id of type int64"}
+{"level":"ERROR","time":"2023-01-24T23:57:31.137+0800","caller":"controller/post.go:17","msg":"create post with invalid param"}
+{"level":"INFO","time":"2023-01-24T23:57:31.137+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0007703}
+{"level":"INFO","time":"2023-01-24T23:57:53.431+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0231811}
+{"level":"DEBUG","time":"2023-01-25T00:00:05.720+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
