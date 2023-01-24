@@ -118,3 +118,5 @@
 {"level":"INFO","time":"2023-01-23T20:53:53.071+0800","caller":"logger/logger.go:80","msg":"/api/v1/community/55","status":200,"method":"POST","path":"/api/v1/community/55","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0003171}
 {"level":"INFO","time":"2023-01-23T20:53:56.302+0800","caller":"logger/logger.go:80","msg":"/api/v1/community/3","status":200,"method":"POST","path":"/api/v1/community/3","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0006578}
 {"level":"DEBUG","time":"2023-01-23T21:16:45.512+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-23T22:42:36.498+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-23T22:43:59.402+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
