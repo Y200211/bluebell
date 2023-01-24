@@ -11,4 +11,5 @@ func CreatePost(p *models.Post) (err error) {
 	p.ID = snowflake.GenID()
 	//2. 保存到数据库
 	return mysql.CreatePost(p)
+	//test
 }
