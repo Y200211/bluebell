@@ -141,3 +141,61 @@
 {"level":"INFO","time":"2023-01-25T14:05:00.316+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/340004026022100992","status":200,"method":"POST","path":"/api/v1/post/340004026022100992","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
 {"level":"INFO","time":"2023-01-25T14:06:27.505+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0068441}
 {"level":"INFO","time":"2023-01-25T14:07:03.661+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"POST","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-01-25T14:09:18.873+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.001854}
+{"level":"DEBUG","time":"2023-01-25T14:22:46.473+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T14:23:08.565+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T14:23:17.555+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T14:23:56.051+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T14:24:02.435+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T14:24:59.709+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T19:50:36.945+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-25T19:50:54.642+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"ERROR","time":"2023-01-25T19:50:54.643+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"INFO","time":"2023-01-25T19:50:54.643+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0139346}
+{"level":"ERROR","time":"2023-01-25T19:51:37.537+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"ERROR","time":"2023-01-25T19:51:37.538+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"INFO","time":"2023-01-25T19:51:37.538+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/340004026022100992","status":200,"method":"GET","path":"/api/v1/post/340004026022100992","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0014126}
+{"level":"ERROR","time":"2023-01-25T19:56:28.649+0800","caller":"logic/post.go:22","msg":"mysql GetPostByID(pid int64) failed","error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T19:56:28.649+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T19:56:28.649+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/340004026","status":200,"method":"GET","path":"/api/v1/post/340004026","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.000793}
+{"level":"ERROR","time":"2023-01-25T19:56:36.352+0800","caller":"logic/post.go:22","msg":"mysql GetPostByID(pid int64) failed","error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T19:56:36.352+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T19:56:36.352+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/340004026","status":200,"method":"GET","path":"/api/v1/post/340004026","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0010724}
+{"level":"INFO","time":"2023-01-25T19:56:41.756+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0206354}
+{"level":"INFO","time":"2023-01-25T19:56:46.052+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/","status":200,"method":"GET","path":"/api/v1/post/","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"ERROR","time":"2023-01-25T19:56:50.575+0800","caller":"logic/post.go:22","msg":"mysql GetPostByID(pid int64) failed","error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T19:56:50.575+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T19:56:50.575+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/2132","status":200,"method":"GET","path":"/api/v1/post/2132","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0017808}
+{"level":"ERROR","time":"2023-01-25T19:56:55.697+0800","caller":"controller/post.go:44","msg":"get post detail with invalid param","error":"strconv.ParseInt: parsing \"213sdds\": invalid syntax"}
+{"level":"ERROR","time":"2023-01-25T19:56:55.698+0800","caller":"logic/post.go:22","msg":"mysql GetPostByID(pid int64) failed","error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T19:56:55.698+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T19:56:55.698+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/213sdds","status":200,"method":"GET","path":"/api/v1/post/213sdds","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0017012}
+{"level":"DEBUG","time":"2023-01-25T19:59:54.647+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-25T20:00:00.367+0800","caller":"controller/post.go:44","msg":"get post detail with invalid param","error":"strconv.ParseInt: parsing \"sadc\": invalid syntax"}
+{"level":"ERROR","time":"2023-01-25T20:00:00.368+0800","caller":"logic/post.go:22","msg":"mysql GetPostByID(pid int64) failed","error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T20:00:00.368+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T20:00:00.368+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/sadc","status":200,"method":"GET","path":"/api/v1/post/sadc","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0009852}
+{"level":"ERROR","time":"2023-01-25T20:00:14.221+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"ERROR","time":"2023-01-25T20:00:14.221+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from user where user_id = ?' at line 1"}
+{"level":"INFO","time":"2023-01-25T20:00:14.221+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.001635}
+{"level":"DEBUG","time":"2023-01-25T20:09:51.331+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-25T20:09:55.139+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T20:09:55.139+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T20:09:55.139+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0185851}
+{"level":"ERROR","time":"2023-01-25T20:10:05.566+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T20:10:05.566+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T20:10:05.566+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0008076}
+{"level":"DEBUG","time":"2023-01-25T20:18:44.834+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:20:41.061+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:22:45.283+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-01-25T20:22:55.837+0800","caller":"logic/post.go:27","msg":"mysql GetUserByID(post.AuthorID) failed","author_id":0,"error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2023-01-25T20:22:55.837+0800","caller":"controller/post.go:51","msg":"logic.GetPostByID failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2023-01-25T20:22:55.837+0800","caller":"logger/logger.go:80","msg":"/api/v1/post/339798491016462336","status":200,"method":"GET","path":"/api/v1/post/339798491016462336","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0015469}
+{"level":"DEBUG","time":"2023-01-25T20:31:38.367+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-25T20:31:47.458+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0169442}
+{"level":"DEBUG","time":"2023-01-25T20:34:56.246+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:39:09.032+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:39:28.750+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:39:41.318+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-25T20:40:01.692+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-25T20:40:06.552+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0169961}

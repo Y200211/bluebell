@@ -2,6 +2,9 @@ package mysql
 
 import (
 	"bluebell/models"
+	"database/sql"
+
+	"go.uber.org/zap"
 )
 
 func CreatePost(p *models.Post) (err error) {
@@ -21,5 +24,14 @@ func GetPostByID(pid int64) (post *models.Post, err error) {
 			   from post
 			   where post_id = ?`
 	err = db.Get(post, sqlStr, pid)
+	if err == sql.ErrNoRows {
+		err = ErrorInvalidID
+		return
+	}
+	if err != nil {
+		zap.L().Error("query post failed", zap.String("sql", sqlStr), zap.Error(err))
+		err = ErrorInvalidID
+		return
+	}
 	return
 }

@@ -11,3 +11,10 @@ type Post struct {
 	Status      int32     `json:"status" db:"status"`
 	CreateTime  time.Time `json:"create_time" db:"create_time"`
 }
+
+// ApiPostDetail帖子详情接口的结构体
+type ApiPostDetail struct {
+	AuthorName string `json:"author_name"`
+	*Post
+	*CommunityDetail
+}

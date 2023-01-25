@@ -20,19 +20,20 @@ func CreatePostHandler(c *gin.Context) {
 		return
 	}
 	// 2. 创建帖子
-	if err := logic.CreatePost(p); err != nil {
-		zap.L().Error("logic.CreatePost(p) failed", zap.Error(err))
-		ResponseError(c, CodeServerBusy)
-		return
-	}
 	userID, err := getCurrentUserID(c)
 	if err != nil {
 		ResponseError(c, CodeNeedLogin)
 		return
 	}
 	p.AuthorID = userID
+	if err := logic.CreatePost(p); err != nil {
+		zap.L().Error("logic.CreatePost(p) failed", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
+
 	// 3. 返回响应
-	ResponseSuccess(c, nil)
+	ResponseSuccess(c, nil) // nil
 }
 
 // GetPostDetailHandler 获取帖子详情的函数
