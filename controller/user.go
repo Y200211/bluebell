@@ -77,7 +77,7 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 	//2 逻辑处理
-	token, err := logic.Login(p)
+	user, err := logic.Login(p)
 	if err != nil {
 		zap.L().Error("logic.Login failed", zap.String("username", p.Username), zap.Error(err))
 		if errors.Is(err, mysql.ErrorUserNotExist) {
@@ -90,5 +90,9 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	//3 返回参数
-	ResponseSuccess(c, token)
+	ResponseSuccess(c, gin.H{
+		"user_id":   fmt.Sprintf("%d", user.UserID),
+		"user_name": user.Username,
+		"token":     user.Token,
+	})
 }
