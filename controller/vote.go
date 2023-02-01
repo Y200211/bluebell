@@ -4,6 +4,8 @@ import (
 	"bluebell/logic"
 	"bluebell/models"
 
+	"go.uber.org/zap"
+
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 )
@@ -24,6 +26,15 @@ func PostVoteContrtoller(c *gin.Context) {
 		errData := removeTopStruct(errs.Translate(trans))
 		ResponseErrorWithMsg(c, CodeInvalidParam, errData)
 	}
-	logic.PostVote()
+	userID, err := getCurrentUserID(c)
+	if err != nil {
+		ResponseError(c, CodeNeedLogin)
+		return
+	}
+	if err := logic.VoteForPost(userID, p); err != nil {
+		zap.L().Error("logic.VoteForError() failed", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
 	ResponseSuccess(c, nil)
 }

@@ -234,3 +234,12 @@
 {"level":"DEBUG","time":"2023-01-28T00:45:52.776+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-28T14:45:56.791+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
 {"level":"DEBUG","time":"2023-01-28T14:47:13.250+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-01-29T14:40:05.003+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-01-29T14:40:11.875+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"GET","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-01-29T14:40:34.022+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0006256}
+{"level":"INFO","time":"2023-01-29T14:41:19.376+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-01-29T14:41:39.522+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0009999}
+{"level":"INFO","time":"2023-01-29T14:42:26.426+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0009426}
+{"level":"INFO","time":"2023-01-29T14:42:45.261+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-01-29T14:42:50.748+0800","caller":"logger/logger.go:80","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0}
+{"level":"DEBUG","time":"2023-02-01T01:49:31.644+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
