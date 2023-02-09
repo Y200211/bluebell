@@ -273,3 +273,5 @@
 {"level":"INFO","time":"2023-02-09T16:14:51.911+0800","caller":"logger/logger.go:80","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"page=3&size=2&order=time","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0004552}
 {"level":"INFO","time":"2023-02-09T16:15:00.589+0800","caller":"logger/logger.go:80","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"page=1&size=5&order=time","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.001855}
 {"level":"INFO","time":"2023-02-09T16:15:29.965+0800","caller":"logger/logger.go:80","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"page=1&size=5&order=score","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.30.0","errors":"","cost":0.0014645}
+{"level":"DEBUG","time":"2023-02-09T20:43:47.605+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-02-09T20:44:16.579+0800","caller":"bluebell/main.go:39","msg":"logger init success..."}

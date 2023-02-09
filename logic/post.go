@@ -92,12 +92,16 @@ func GetPostList2(p *models.ParamPostList) (data []*models.ApiPostDetail, err er
 
 		return
 	}
+	voteData, err := redis.GetPostVoteData(ids)
+	if err != nil {
+		return
+	}
 	// 3. 根据id查询帖子的详细信息
 	posts, err := mysql.GetPostListByIDs(ids)
 	if err != nil {
 		return
 	}
-	for _, post := range posts {
+	for idx, post := range posts {
 		user, err := mysql.GetUserByID(post.AuthorID)
 		if err != nil {
 			zap.L().Error("mysql GetUserByID(post.AuthorID) failed",
@@ -114,6 +118,7 @@ func GetPostList2(p *models.ParamPostList) (data []*models.ApiPostDetail, err er
 		}
 		postDetail := &models.ApiPostDetail{
 			AuthorName:      user.Username,
+			VoteNum:         voteData[idx],
 			Post:            post,
 			CommunityDetail: community,
 		}
