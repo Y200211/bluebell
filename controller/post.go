@@ -58,24 +58,35 @@ func GetPostDetailHandler(c *gin.Context) {
 }
 
 // GetPostListHandler 获取帖子列表接口
+
 func GetPostListHandler(c *gin.Context) {
-	pageStr := c.Query("page")
-	sizeStr := c.Query("size")
-	var (
-		page int64
-		size int64
-		err  error
-	)
-	page, err = strconv.ParseInt(pageStr, 10, 64)
+
+	page, size := getPageInfo(c)
+	data, err := logic.GetPostList(page, size)
 	if err != nil {
-		page = 1
+		zap.L().Error("logic.GetPostList() failed", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
 	}
-	size, err = strconv.ParseInt(sizeStr, 10, 64)
-	if err != nil {
-		size = 10
+	ResponseSuccess(c, data)
+}
+
+func GetPostListHandler2(c *gin.Context) {
+	// 1. 获取参数
+	// 2. 去redis查询id列表
+	// 3. 根据id查询帖子的详细信息
+	p := &models.ParamPostList{
+		Page:  1,
+		Size:  10,
+		Order: models.Ordertime,
+	}
+	if err := c.ShouldBind(p); err != nil {
+		zap.L().Error("GetPostListHandler2 with invalid params", zap.Error(err))
+		ResponseError(c, CodeInvalidParam)
+		return
 	}
 
-	data, err := logic.GetPostList(page, size)
+	data, err := logic.GetPostList2(p)
 	if err != nil {
 		zap.L().Error("logic.GetPostList() failed", zap.Error(err))
 		ResponseError(c, CodeServerBusy)
