@@ -1,10 +1,11 @@
 package redis
 
 const (
-	KeyPrefix        = "bluebell:"
-	KeyPostTimeZSet  = "post:time"
-	KeyPostScoreZSet = "post:score"
-	KeyPostVotedPF   = "post:voted:"
+	KeyPrefix         = "bluebell:"
+	KeyPostTimeZSet   = "post:time"
+	KeyPostScoreZSet  = "post:score"
+	KeyPostVotedPF    = "post:voted:"
+	KeyCommunitySetPF = "community:"
 )
 
 // 给 redis key 加上前缀

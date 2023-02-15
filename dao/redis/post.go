@@ -2,9 +2,17 @@ package redis
 
 import (
 	"bluebell/models"
+	"strconv"
+	"time"
 
 	"github.com/go-redis/redis"
 )
+
+func GetIDsFromKey(key string, page, size int64) ([]string, error) {
+	start := (page - 1) * size
+	end := start + size - 1
+	return client.ZRevRange(key, start, end).Result()
+}
 
 func GetPostIdsInOrder(p *models.ParamPostList) ([]string, error) {
 	// 从redis获取ID
@@ -14,10 +22,7 @@ func GetPostIdsInOrder(p *models.ParamPostList) ([]string, error) {
 		key = getRedisKey(KeyPostScoreZSet)
 	}
 	// 2.确定查询索引起始点
-	start := (p.Page - 1) * p.Size
-	end := start + p.Size - 1
-	return client.ZRevRange(key, start, end).Result()
-
+	return GetIDsFromKey(key, p.Page, p.Size)
 }
 
 func GetPostVoteData(ids []string) (data []int64, err error) {
@@ -42,4 +47,28 @@ func GetPostVoteData(ids []string) (data []int64, err error) {
 		data = append(data, v)
 	}
 	return
+}
+
+// GetCommunityPostIdsInOrder 按社区查找
+func GetCommunityPostIdsInOrder(p *models.ParamPostList) ([]string, error) {
+	// 从redis获取ID
+	// 根据用户请求中携带的 order参数确定要查询的 key
+	orderKey := getRedisKey(KeyPostTimeZSet)
+	if p.Order == models.Orderscore {
+		orderKey = getRedisKey(KeyPostScoreZSet)
+	}
+	key := orderKey + strconv.Itoa(int(p.CommunityID))
+	cKey := getRedisKey(KeyCommunitySetPF + strconv.Itoa(int(p.CommunityID)))
+	if client.Exists(key).Val() < 1 {
+		pipeline := client.Pipeline()
+		pipeline.ZInterStore(key, redis.ZStore{
+			Aggregate: "MAX",
+		}, cKey, orderKey)
+		pipeline.Expire(key, 60*time.Second)
+		_, err := pipeline.Exec()
+		if err != nil {
+			return nil, err
+		}
+	}
+	return GetIDsFromKey(key, p.Page, p.Size)
 }
