@@ -16,7 +16,11 @@ func SetupRouter(mode string) *gin.Engine {
 	//gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
-
+	r.LoadHTMLFiles("templates/index.html")
+	r.Static("/static", "./static")
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(200, "index.html", nil)
+	})
 	v1 := r.Group("api/v1")
 
 	v1.POST("/signup", controller.SignUpHandler)
